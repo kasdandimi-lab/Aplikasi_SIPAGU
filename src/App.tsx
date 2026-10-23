@@ -16,6 +16,7 @@ import { AuditScreen } from './screens/AuditScreen';
 import { ScheduleScreen } from './screens/ScheduleScreen';
 import { LeaveScreen } from './screens/LeaveScreen';
 import { ReportScreen } from './screens/ReportScreen';
+import { LoginScreen } from './screens/LoginScreen';
 import { ResetPasswordModal } from './components/ResetPasswordModal';
 import { EditRoleDrawer } from './components/EditRoleDrawer';
 import { AuditLogModal } from './components/AuditLogModal';
@@ -23,6 +24,7 @@ import { DapodikSyncModal } from './components/DapodikSyncModal';
 import { AddUserModal } from './components/AddUserModal';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeScreen, setActiveScreen] = useState<ScreenId>('data-master-dan-akun');
   const [activeRole, setActiveRole] = useState<UserRole>('kurikulum');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -215,6 +217,51 @@ export default function App() {
     showGlobalToast('Permohonan izin berhasil diajukan.');
   };
 
+  const handleLogin = (role: UserRole) => {
+    setActiveRole(role);
+    setIsAuthenticated(true);
+    showGlobalToast(
+      `Selamat datang di SIPAGU! Anda masuk sebagai ${
+        role === 'kepsek'
+          ? 'Kepala Sekolah'
+          : role === 'kurikulum'
+          ? 'Admin Kurikulum'
+          : 'Guru Pengajar'
+      }.`
+    );
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    showGlobalToast('Anda telah berhasil keluar dari sistem SIPAGU.');
+  };
+
+  // If user is not yet logged in, show Login Screen matching image_d0813efd.png
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[#f7faf8]">
+        {toastMessage && (
+          <div className="fixed bottom-6 right-6 z-50 bg-[#00513c] text-white px-4 py-3 rounded-lg shadow-xl flex items-center gap-2.5 text-[13px] font-medium border border-[#89d6b7]/30 animate-in fade-in slide-in-from-bottom duration-200">
+            <span className="material-symbols-outlined text-[18px]">verified</span>
+            <span>{toastMessage}</span>
+          </div>
+        )}
+
+        <LoginScreen
+          onLogin={handleLogin}
+          onForgotPassword={() => setResetPasswordTargetUser(users[0])}
+        />
+
+        <ResetPasswordModal
+          user={resetPasswordTargetUser}
+          isOpen={Boolean(resetPasswordTargetUser)}
+          onClose={() => setResetPasswordTargetUser(null)}
+          onSuccess={showGlobalToast}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#f7faf8] text-[#181c1b] flex flex-col font-sans">
       {/* Toast Notification */}
@@ -233,6 +280,7 @@ export default function App() {
         onChangeRole={setActiveRole}
         isOpenMobile={isMobileMenuOpen}
         onCloseMobile={() => setIsMobileMenuOpen(false)}
+        onLogout={handleLogout}
       />
 
       {/* Main Container */}
@@ -242,6 +290,7 @@ export default function App() {
           activeRole={activeRole}
           onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
           onOpenAuditLog={() => setIsAuditModalOpen(true)}
+          onLogout={handleLogout}
         />
 
         {/* Viewport Content */}

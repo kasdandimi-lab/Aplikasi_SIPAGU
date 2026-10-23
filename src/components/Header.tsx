@@ -5,14 +5,17 @@ interface HeaderProps {
   activeRole: UserRole;
   onOpenMobileMenu: () => void;
   onOpenAuditLog: () => void;
+  onLogout?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeRole,
   onOpenMobileMenu,
   onOpenAuditLog,
+  onLogout,
 }) => {
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   // Profile info based on role
   const profile = {
@@ -140,21 +143,58 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* User profile capsule */}
-          <div className="flex items-center gap-2.5 pl-1 border-l border-[#bec9c2]/40">
-            <div className="hidden md:flex flex-col text-right">
-              <span className="text-[14px] leading-tight text-[#181c1b] font-semibold truncate max-w-[200px]">
-                {profile.name}
-              </span>
-              <span className="text-[11px] leading-tight text-[#51625a] truncate">
-                {profile.nip}
-              </span>
-            </div>
-            <div
-              className={`w-9 h-9 rounded-full ${profile.bg} flex items-center justify-center flex-shrink-0 font-bold text-[13px] shadow-xs`}
-              title={`${profile.name} (${profile.roleTitle})`}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setShowProfileMenu(!showProfileMenu)}
+              className="flex items-center gap-2.5 pl-2.5 py-1 pr-1 rounded-xl hover:bg-[#f1f4f2] transition-colors border-l border-[#bec9c2]/40 cursor-pointer"
             >
-              {profile.initials}
-            </div>
+              <div className="hidden md:flex flex-col text-right">
+                <span className="text-[13px] leading-tight text-[#181c1b] font-semibold truncate max-w-[200px]">
+                  {profile.name}
+                </span>
+                <span className="text-[11px] leading-tight text-[#51625a] truncate">
+                  {profile.nip}
+                </span>
+              </div>
+              <div
+                className={`w-9 h-9 rounded-full ${profile.bg} flex items-center justify-center flex-shrink-0 font-bold text-[13px] shadow-xs`}
+                title={`${profile.name} (${profile.roleTitle})`}
+              >
+                {profile.initials}
+              </div>
+              <span className="material-symbols-outlined text-[18px] text-[#51625a]">
+                expand_more
+              </span>
+            </button>
+
+            {/* Profile Dropdown Menu */}
+            {showProfileMenu && (
+              <div
+                onMouseLeave={() => setShowProfileMenu(false)}
+                className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-[#bec9c2]/50 p-2 z-50 animate-in fade-in zoom-in-95 duration-100"
+              >
+                <div className="p-2.5 rounded-lg bg-[#f1f4f2] mb-1.5">
+                  <div className="font-bold text-[13px] text-[#181c1b] truncate">{profile.name}</div>
+                  <div className="text-[11px] text-[#51625a] font-mono">{profile.nip}</div>
+                  <div className="text-[11px] text-[#00513c] font-semibold mt-0.5">{profile.roleTitle}</div>
+                </div>
+
+                {onLogout && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowProfileMenu(false);
+                      onLogout();
+                    }}
+                    className="w-full px-3 py-2 text-[12px] font-semibold text-[#ba1a1a] hover:bg-[#ffdad6] rounded-lg flex items-center gap-2 transition-colors cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">logout</span>
+                    <span>Keluar dari SIPAGU</span>
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -17,6 +17,7 @@ interface SidebarProps {
   onChangeRole: (role: UserRole) => void;
   isOpenMobile: boolean;
   onCloseMobile: () => void;
+  onLogout?: () => void;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -26,6 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onChangeRole,
   isOpenMobile,
   onCloseMobile,
+  onLogout,
 }) => {
   const navItems = [
     { id: 'dasbor-utama' as ScreenId, label: 'Dasbor Utama', icon: 'grid_view' },
@@ -120,6 +122,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </button>
             );
           })}
+
+          {onLogout && (
+            <button
+              onClick={() => {
+                onLogout();
+                onCloseMobile();
+              }}
+              className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-left transition-colors text-[13px] font-semibold text-[#ba1a1a] hover:bg-[#ffdad6] mt-3"
+            >
+              <span className="material-symbols-outlined text-[20px]">logout</span>
+              <span>Keluar (Logout)</span>
+            </button>
+          )}
         </nav>
 
         {/* Sync Status Footer */}
