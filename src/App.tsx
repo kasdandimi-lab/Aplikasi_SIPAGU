@@ -16,6 +16,9 @@ import { AuditScreen } from './screens/AuditScreen';
 import { ScheduleScreen } from './screens/ScheduleScreen';
 import { LeaveScreen } from './screens/LeaveScreen';
 import { ReportScreen } from './screens/ReportScreen';
+import { SessionLogScreen } from './screens/SessionLogScreen';
+import { SchoolDataScreen } from './screens/SchoolDataScreen';
+import { NotificationCenterScreen } from './screens/NotificationCenterScreen';
 import { LoginScreen } from './screens/LoginScreen';
 import { ResetPasswordModal } from './components/ResetPasswordModal';
 import { EditRoleDrawer } from './components/EditRoleDrawer';
@@ -25,7 +28,7 @@ import { AddUserModal } from './components/AddUserModal';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeScreen, setActiveScreen] = useState<ScreenId>('data-master-dan-akun');
+  const [activeScreen, setActiveScreen] = useState<ScreenId>('pemeriksaan-dan-audit');
   const [activeRole, setActiveRole] = useState<UserRole>('kurikulum');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -291,23 +294,11 @@ export default function App() {
           onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
           onOpenAuditLog={() => setIsAuditModalOpen(true)}
           onLogout={handleLogout}
+          onNavigateToScreen={(screen) => setActiveScreen(screen)}
         />
 
         {/* Viewport Content */}
         <main className="w-full pt-20 flex-1 px-4 sm:px-6 lg:px-8 py-6">
-          {activeScreen === 'data-master-dan-akun' && (
-            <AccountManagementScreen
-              users={users}
-              onOpenAuditLog={() => setIsAuditModalOpen(true)}
-              onOpenDapodikSync={() => setIsDapodikSyncOpen(true)}
-              onOpenAddUser={() => setIsAddUserOpen(true)}
-              onOpenResetPassword={(u) => setResetPasswordTargetUser(u)}
-              onOpenEditRole={(u) => setEditRoleTargetUser(u)}
-              onToggleUserStatus={handleToggleUserStatus}
-              onDeleteUser={handleDeleteUser}
-            />
-          )}
-
           {activeScreen === 'dasbor-utama' && (
             <DashboardScreen
               activeRole={activeRole}
@@ -335,6 +326,13 @@ export default function App() {
             />
           )}
 
+          {activeScreen === 'log-sesi-kbm' && (
+            <SessionLogScreen
+              journals={journals}
+              onOpenQR={() => setActiveScreen('presensi-qr-kelas')}
+            />
+          )}
+
           {activeScreen === 'pengajuan-izin' && (
             <LeaveScreen
               requests={leaveRequests}
@@ -345,8 +343,29 @@ export default function App() {
             />
           )}
 
-          {activeScreen === 'laporan-dan-riwayat' && (
+          {activeScreen === 'laporan-dan-rekapitulasi' && (
             <ReportScreen users={users} />
+          )}
+
+          {activeScreen === 'data-master-sekolah' && (
+            <SchoolDataScreen />
+          )}
+
+          {(activeScreen === 'manajemen-akun' || (activeScreen as string) === 'data-master-dan-akun') && (
+            <AccountManagementScreen
+              users={users}
+              onOpenAuditLog={() => setIsAuditModalOpen(true)}
+              onOpenDapodikSync={() => setIsDapodikSyncOpen(true)}
+              onOpenAddUser={() => setIsAddUserOpen(true)}
+              onOpenResetPassword={(u) => setResetPasswordTargetUser(u)}
+              onOpenEditRole={(u) => setEditRoleTargetUser(u)}
+              onToggleUserStatus={handleToggleUserStatus}
+              onDeleteUser={handleDeleteUser}
+            />
+          )}
+
+          {activeScreen === 'pusat-notifikasi' && (
+            <NotificationCenterScreen />
           )}
         </main>
 

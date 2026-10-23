@@ -266,7 +266,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
               . Anda dapat berpindah peran kapan saja melalui menu di bilah navigasi kiri.
             </p>
             <button
-              onClick={() => onNavigateTo('data-master-dan-akun')}
+              onClick={() => onNavigateTo('manajemen-akun')}
               className="w-full py-2 rounded-lg bg-white hover:bg-[#e0e3e1] text-[#00513c] text-[12px] font-semibold border border-[#bec9c2]/50 transition-colors"
             >
               Buka Manajemen Akun &amp; Kredensial →

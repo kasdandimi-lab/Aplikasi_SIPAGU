@@ -6,6 +6,7 @@ interface HeaderProps {
   onOpenMobileMenu: () => void;
   onOpenAuditLog: () => void;
   onLogout?: () => void;
+  onNavigateToScreen?: (screen: any) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -13,6 +14,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenMobileMenu,
   onOpenAuditLog,
   onLogout,
+  onNavigateToScreen,
 }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -127,15 +129,26 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   </div>
                 </div>
-                <div className="pt-2 border-t border-[#bec9c2]/30 mt-2 text-center">
+                <div className="pt-2 border-t border-[#bec9c2]/30 mt-2 flex items-center justify-between text-[11px]">
                   <button
                     onClick={() => {
                       setShowNotifications(false);
                       onOpenAuditLog();
                     }}
-                    className="text-[12px] text-[#00513c] font-semibold hover:underline"
+                    className="text-[#51625a] hover:text-[#00513c] font-semibold hover:underline"
                   >
-                    Buka Riwayat Audit Lengkap →
+                    Log Audit
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowNotifications(false);
+                      if (onNavigateToScreen) {
+                        onNavigateToScreen('pusat-notifikasi');
+                      }
+                    }}
+                    className="text-[#00513c] font-bold hover:underline"
+                  >
+                    Buka Pusat Notifikasi →
                   </button>
                 </div>
               </div>
