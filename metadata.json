@@ -1,0 +1,6 @@
+{
+  "name": "SIPAGU - Pemantauan Aktivitas Guru",
+  "description": "Sistem Informasi Akademik & Kinerja Pendidik Terintegrasi Kemendikbudristek untuk manajemen akun, presensi QR kelas, audit, jadwal, dan pelaporan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

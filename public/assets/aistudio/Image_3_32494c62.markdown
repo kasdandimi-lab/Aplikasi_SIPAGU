@@ -1,0 +1,221 @@
+---
+name: Sistem Informasi Pemantauan Aktivitas Guru
+colors:
+  surface: '#f7faf8'
+  surface-dim: '#d7dbd9'
+  surface-bright: '#f7faf8'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f1f4f2'
+  surface-container: '#ebefed'
+  surface-container-high: '#e6e9e7'
+  surface-container-highest: '#e0e3e1'
+  on-surface: '#181c1b'
+  on-surface-variant: '#3f4944'
+  inverse-surface: '#2d3130'
+  inverse-on-surface: '#eef1ef'
+  outline: '#6f7974'
+  outline-variant: '#bec9c2'
+  surface-tint: '#176b52'
+  primary: '#00513c'
+  on-primary: '#ffffff'
+  primary-container: '#176b52'
+  on-primary-container: '#9be9c9'
+  inverse-primary: '#89d6b7'
+  secondary: '#51625a'
+  on-secondary: '#ffffff'
+  secondary-container: '#d4e7dd'
+  on-secondary-container: '#576860'
+  tertiary: '#74332e'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#914a44'
+  on-tertiary-container: '#ffcdc8'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#a4f2d2'
+  primary-fixed-dim: '#89d6b7'
+  on-primary-fixed: '#002116'
+  on-primary-fixed-variant: '#00513c'
+  secondary-fixed: '#d4e7dd'
+  secondary-fixed-dim: '#b8cbc1'
+  on-secondary-fixed: '#0f1f19'
+  on-secondary-fixed-variant: '#3a4a43'
+  tertiary-fixed: '#ffdad6'
+  tertiary-fixed-dim: '#ffb4ac'
+  on-tertiary-fixed: '#3b0807'
+  on-tertiary-fixed-variant: '#74332e'
+  background: '#f7faf8'
+  on-background: '#181c1b'
+  surface-variant: '#e0e3e1'
+typography:
+  display:
+    fontFamily: Inter
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.02em
+  display-mobile:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 36px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 30px
+    fontWeight: '700'
+    lineHeight: 38px
+    letterSpacing: -0.015em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.01em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 22px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 18px
+    fontWeight: '600'
+    lineHeight: 24px
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  body-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 16px
+  label-lg:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '600'
+    lineHeight: 20px
+    letterSpacing: 0.01em
+  label-md:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '500'
+    lineHeight: 14px
+    letterSpacing: 0.03em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-desktop: 1.5rem
+  margin: 1rem
+  margin-tablet: 1.5rem
+  margin-desktop: 2.5rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2rem
+  space-2xl: 3rem
+---
+
+## Brand & Style
+
+The design system embodies transparency, precision, and pedagogical trust for educational administration. Designed for school principals, supervisors, and educators within the SIPAGU ecosystem, the visual language balances civic authority with welcoming usability.
+
+The aesthetic fuses **Corporate / Modern** discipline with **Soft Tactility**:
+- Crisp whitespace and structured visual hierarchies minimize cognitive strain during high-volume reporting.
+- Calming natural hues convey administrative stability and institutional growth.
+- Surfaces are honest and tactile, moving away from glossy visual gimmicks in favor of crystal-clear legibility, immediate scanability, and high-contrast compliance for field-level mobile logging and desktop audits.
+
+## Colors
+
+The palette is anchored by deep institutional emerald, supported by restorative sage tones and balanced off-white backdrops to prevent screen fatigue.
+
+- **Primary (`#176B52`)**: The foundational institutional anchor. Reserved for primary calls to action, active navigation states, key metric highlights, and authoritative badges.
+- **Secondary (`#DCEFE5`)**: A soft sage wash. Deployed for subtle background accents, interactive pill hovers, active tab indicators, and progress tracks.
+- **Neutral Canvas (`#F4F7F5`)**: A cool, clean tinted grey-green that ensures pure white data containers distinctly lift off the page.
+- **Surface Elevation (`#FFFFFF`)**: Pure white cards ensuring optimal readability and contrast for complex form fields, schedule matrices, and log tables.
+- **Text & Accents**: Text elements rely on deep slate tones (`#132A22` for headings, `#31493F` for secondary copy) to ensure strict WCAG AAA conformance against both white and sage surfaces.
+
+## Typography
+
+The type system standardizes on **Inter** across all typographic hierarchies to ensure maximum legibility for Indonesian institutional data, tabular metrics, and detailed instructional records. 
+
+- Numeric features should leverage tabular numbers (`tnum`) in dashboard summaries, attendance timestamps, and class hour counts.
+- Strict optical sizing and negative tracking on larger display headlines create an authoritative, editorial finish.
+- Body levels maintain generous line heights (`1.4` to `1.5`) to eliminate reading fatigue during extended activity logging and verification sessions.
+
+## Layout & Spacing
+
+A responsive mobile-first architecture drives the layout system:
+- **Mobile (<768px)**: 4-column fluid layout with `1rem` safe margins. Key actions are sticky or positioned within lower viewport reach zones. Single-column stacked cards ensure effortless single-hand logging during physical classroom visits.
+- **Tablet (768px - 1024px)**: 8-column layout with `1.5rem` margins and gutters. Side-by-side verification panes and metric summaries become dual-column panels.
+- **Desktop (≥1024px)**: 12-column layout with a maximum container boundary of `1280px`. Left-rail navigation is fixed at `260px`, allowing deep contextual tables, audit trails, and multi-column activity metrics to sit comfortably without horizontal scrollbars.
+
+Vertical rhythm adheres rigidly to an 8-point base grid (`space-xs` = 4px, `space-sm` = 8px, `space-md` = 16px, `space-lg` = 24px, `space-xl` = 32px).
+
+## Elevation & Depth
+
+Visual hierarchy is maintained through **Tonal Layers with Low-Contrast Outlines**, avoiding dramatic heavy drop shadows:
+
+- **Level 0 (Canvas Base)**: `#F4F7F5`.
+- **Level 1 (Default Containers & Cards)**: Solid `#FFFFFF` fill supported by a subtle 1px border (`rgba(23, 107, 82, 0.12)`) and an ambient, low-opacity drop shadow (`0 1px 3px 0 rgba(19, 42, 34, 0.04), 0 1px 2px -1px rgba(19, 42, 34, 0.04)`).
+- **Level 2 (Hovered Cards & Interactive States)**: Elevates cleanly with an extended ambient tint (`0 4px 6px -1px rgba(19, 42, 34, 0.06), 0 2px 4px -2px rgba(19, 42, 34, 0.04)`) and border saturation to `rgba(23, 107, 82, 0.25)`.
+- **Level 3 (Modals, Slide-over Drawers, Floating Action Triggers)**: Crisp `#FFFFFF` surface lifted by `0 20px 25px -5px rgba(19, 42, 34, 0.08), 0 8px 10px -6px rgba(19, 42, 34, 0.04)` over a sage-tinted translucent backdrop (`rgba(19, 42, 34, 0.35)` with `backdrop-filter: blur(4px)`).
+
+## Shapes
+
+The interface embraces a balanced **Rounded (`2`)** geometry to convey approachable professionalism:
+- Base inputs, buttons, chips, and small alert notifications utilize `0.5rem` (8px) corner radii.
+- Content cards, dashboard widgets, and standard panels employ `rounded-lg` at `1rem` (16px).
+- Modals, prominent bottom sheets on mobile devices, and system alert banners use `rounded-xl` at `1.5rem` (24px).
+- Avatars, badge counters, and active status indicators strictly maintain fully circular or pill structures (`rounded-full`).
+
+## Components
+
+### Buttons
+- **Primary**: Solid emerald `#176B52` background with `#FFFFFF` text. Minimum touch target height of 44px on mobile (40px desktop). Hover state shifts to `#0F513E`, active pressed state deepens to `#0A3C2D`. Focus rings feature a 2px offset with `rgba(23, 107, 82, 0.4)`.
+- **Secondary**: Sage background `#DCEFE5` with `#176B52` text. Hover state brightens to `#CDE7DC`.
+- **Outline / Ghost**: Transparent fill, 1px border in `#176B52` with primary text for secondary tasks (e.g., "Unduh Rekap").
+
+### Form Inputs
+- **Text & Select Fields**: Surface is crisp `#FFFFFF` with 1px border `#CFDCD6`. Heights standard at 44px for accessibility. Active focus shifts the border to 1.5px solid `#176B52` with a subtle outline glow (`rgba(23, 107, 82, 0.15)`). Placeholder copy is rendered in `#73887F`.
+- **Error State**: 1.5px border `#C53030` with matching helper text and warning iconography.
+
+### Cards & Data Modules
+- Built on pure white `#FFFFFF` surfaces with 16px (`rounded-lg`) corner radii and a 1px border in `rgba(23, 107, 82, 0.10)`. Internal padding scales dynamically (`1rem` on mobile, `1.5rem` on desktop). Header zones clearly partition contextual actions from content bodies via a soft separator line (`#EBF2EE`).
+
+### Chips & Status Badges
+- **Status Pills**: 4px vertical / 10px horizontal padding, rounded-full geometry.
+  - *Verified / Hadir*: `#DCEFE5` background with `#176B52` text and a 6px solid emerald dot.
+  - *Pending / Menunggu Verifikasi*: `#FEF3C7` background with `#92400E` text.
+  - *Absent / Tidak Hadir*: `#FEE2E2` background with `#991B1B` text.
+
+### Checkboxes & Radio Buttons
+- Custom 20x20px tactile controls with 4px border-radius (checkbox) and 50% circular radius (radio). Default state has a 1.5px border `#9CB5AA`. Checked state fills `#176B52` with a centered white checkmark or dot.
+
+### Lists & Activity Logs
+- Segmented, high-contrast rows. Each teacher entry features an avatar, pedagogical subject tag, class timestamp, and status badge. Alternating hover rows highlight in `#F8FAF9` with smooth 150ms transitions.
+
+### Verification Banner & Quick Stats Widget
+- Specialized components for SIPAGU supervisors: summary scorecards featuring bold display numbers for completed teaching hours (JP), attendance percentages, and quick approval triggers.

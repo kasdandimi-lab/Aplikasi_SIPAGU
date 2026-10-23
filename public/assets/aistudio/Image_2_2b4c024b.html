@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-low":"#f1f4f2","surface-container-highest":"#e0e3e1","on-tertiary-fixed-variant":"#74332e","tertiary-container":"#914a44","on-primary":"#ffffff","surface":"#f7faf8","primary":"#00513c","on-secondary-container":"#576860","inverse-surface":"#2d3130","on-primary-fixed-variant":"#00513c","on-background":"#181c1b","on-surface-variant":"#3f4944","outline-variant":"#bec9c2","secondary-fixed":"#d4e7dd","on-surface":"#181c1b","tertiary":"#74332e","tertiary-fixed-dim":"#ffb4ac","on-error-container":"#93000a","surface-container-high":"#e6e9e7","inverse-primary":"#89d6b7","background":"#f7faf8","secondary-container":"#d4e7dd","error-container":"#ffdad6","on-secondary":"#ffffff","outline":"#6f7974","on-primary-container":"#9be9c9","on-error":"#ffffff","primary-fixed":"#a4f2d2","on-primary-fixed":"#002116","on-tertiary":"#ffffff","on-tertiary-container":"#ffcdc8","on-tertiary-fixed":"#3b0807","surface-bright":"#f7faf8","surface-variant":"#e0e3e1","surface-container-lowest":"#ffffff","surface-container":"#ebefed","on-secondary-fixed":"#0f1f19","secondary":"#51625a","surface-dim":"#d7dbd9","surface-tint":"#176b52","primary-fixed-dim":"#89d6b7","on-secondary-fixed-variant":"#3a4a43","tertiary-fixed":"#ffdad6","secondary-fixed-dim":"#b8cbc1","primary-container":"#176b52","error":"#ba1a1a","inverse-on-surface":"#eef1ef"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter":"1rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-2xl":"3rem","space-lg":"1.5rem","margin-tablet":"1.5rem","margin-desktop":"2.5rem"},fontFamily:{"headline-md":["Inter"],"label-sm":["Inter"],"display-mobile":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"display":["Inter"]},fontSize:{"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"500"}],"display-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"display":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-low"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">auto_stories</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold truncate">SIPAGU</span><span class="font-label-sm text-label-sm text-secondary truncate">Monitoring Guru</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-xs"><label class="font-label-sm text-label-sm text-on-surface-variant block px-space-xs mb-1 font-semibold uppercase tracking-wider" for="role-switcher">Peran Aktif</label><select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded px-space-sm py-1.5 focus:outline-none cursor-pointer" id="role-switcher"><option selected="" value="kepsek">Kepala Sekolah</option><option value="kurikulum">Admin Kurikulum</option><option value="guru">Guru Pengajar</option></select></div></div><nav class="flex-1 px-space-sm py-space-sm space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="dasbor-utama" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-lg text-label-lg">Dasbor Utama</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="presensi-qr-kelas" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span><span class="font-label-lg text-label-lg">Presensi QR Kelas</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="pemeriksaan-dan-audit" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-lg text-label-lg">Pemeriksaan &amp; Audit</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="manajemen-jadwal" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-lg text-label-lg">Manajemen Jadwal</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="pengajuan-izin" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span class="font-label-lg text-label-lg">Pengajuan Izin</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="laporan-dan-riwayat" href="#"><span class="material-symbols-outlined text-[20px]">summarize</span><span class="font-label-lg text-label-lg">Laporan &amp; Riwayat</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors" data-path="data-master-dan-akun" href="#"><span class="material-symbols-outlined text-[20px]">settings_suggest</span><span class="font-label-lg text-label-lg">Data Master &amp; Akun</span></a></nav><div class="p-space-md bg-surface-container-low"><div class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg bg-surface-container-lowest"><span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-primary font-semibold truncate">Online Sync Aktif</span><span class="font-body-sm text-body-sm text-secondary truncate">Engine v2.4</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">SIPAGU - Pemantauan Aktivitas Guru</span><span class="font-label-sm text-label-sm text-secondary truncate">Sistem Informasi Akademik &amp; Kinerja Pendidik Terintegrasi</span></div><div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span>Semua Layanan Normal • Sync Aktif</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><button aria-label="Notifikasi Aktivitas" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden md:flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Drs. H. Mulyadi, M.Pd</span><span class="font-label-sm text-label-sm text-secondary leading-tight">NIP 196805121994031004</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 flex-1 bg-surface px-gutter-desktop py-space-lg"><div class="flex flex-col w-full space-y-space-lg">
+<!-- Top Navigation & Context Breadcrumb -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-secondary mb-1">
+<span class="hover:text-primary transition-colors cursor-pointer">Beranda</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Pengaturan Sistem</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Manajemen Akun &amp; Pengguna</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+        Manajemen Akun &amp; Hak Akses Pengguna
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl mt-0.5">
+        Kelola kredensial, peran pengguna (Guru, Admin Kurikulum, Kepala Sekolah), status akun aktif/nonaktif, serta protokol otentikasi terverifikasi standar Kemendikbudristek &amp; BSSN.
+      </p>
+</div>
+<!-- Actions Area -->
+<div class="flex items-center flex-wrap gap-space-sm flex-shrink-0">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all duration-150" onclick="toggleModal('modal-audit-log')" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">history</span>
+<span>Log Audit</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-secondary-container/40 font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+<span>Sinkronisasi Dapodik</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all duration-150" onclick="openNewUserModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Tambah Pengguna</span>
+</button>
+</div>
+</div>
+<!-- KPI Metric Overview Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1: Total Accounts -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Total Terdaftar</span>
+<span class="font-display text-display text-on-surface font-bold mt-1">62</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span> 48 Guru
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 12 Admin
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> 2 Kepsek
+        </span>
+</div>
+</div>
+<!-- Card 2: Active Accounts -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Akun Aktif</span>
+<span class="font-display text-display text-primary font-bold mt-1">59</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>95.2% Kredensial aktif tervalidasi</span>
+</div>
+</div>
+<!-- Card 3: Inactive / Review -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Perlu Review</span>
+<span class="font-display text-display text-tertiary font-bold mt-1">3</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>2 Nonaktif cuti, 1 menunggu aktivasi</span>
+</div>
+</div>
+<!-- Card 4: Security Policy -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Protokol 2FA &amp; Sandi</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1.5 flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+            Terenkripsi BSSN
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">lock_clock</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Rotasi 90 Hari</span>
+<span class="font-semibold text-primary">Bcrypt Salting</span>
+</div>
+</div>
+</div>
+<!-- Role Quick Tabs & Search Filters Bar -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm space-y-space-md">
+<!-- Segmented Navigation for Roles -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="inline-flex p-1 bg-surface-container-low rounded-lg gap-1 overflow-x-auto max-w-full">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm" type="button">
+          Semua Pengguna (62)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" type="button">
+          Guru Pengajar (48)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" type="button">
+          Admin Kurikulum &amp; Staf (12)
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" type="button">
+          Kepala Sekolah (2)
+        </button>
+</div>
+<!-- Batch Actions -->
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">mark_email_read</span>
+<span>Undang Ulang Massal</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">download</span>
+<span>Ekspor CSV</span>
+</button>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm pt-space-xs">
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-secondary">search</span>
+<input class="w-full bg-surface-container-low rounded-lg pl-10 pr-space-md py-2.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari nama, NIP/NUPTK, atau email instansi..." type="text"/>
+</div>
+<div class="md:col-span-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-secondary">tune</span>
+<select class="w-full bg-surface-container-low rounded-lg pl-9 pr-8 py-2.5 font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer appearance-none">
+<option value="all">Semua Status Akun</option>
+<option value="active">Aktif (59)</option>
+<option value="inactive">Nonaktif / Cuti (2)</option>
+<option value="pending">Menunggu Aktivasi (1)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-secondary">school</span>
+<select class="w-full bg-surface-container-low rounded-lg pl-9 pr-8 py-2.5 font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer appearance-none">
+<option value="all">Semua Rumpun Mapel / Unit</option>
+<option value="mipa">MIPA (Matematika &amp; Sains)</option>
+<option value="bahasa">Bahasa &amp; Literasi</option>
+<option value="ips">Sosial &amp; Humaniora</option>
+<option value="kejuruan">Informatika &amp; TIK</option>
+<option value="manajemen">Manajemen &amp; Pimpinan</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-1 flex">
+<button class="w-full h-full min-h-[42px] bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center justify-center text-secondary hover:text-on-surface transition-colors" title="Reset Semua Filter" type="button">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Master Data Table Section -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Info Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" id="select-all" type="checkbox"/>
+<label class="font-label-md text-label-md text-on-surface-variant cursor-pointer" for="select-all">
+          Pilih Semua (62 Akun Terpilih)
+        </label>
+</div>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm">
+<span>Menampilkan 1-6 dari 62 akun</span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-secondary disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-container-lowest flex items-center justify-center text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-secondary font-label-md text-label-md uppercase tracking-wider">
+<th class="py-space-md px-space-md w-12 text-center">#</th>
+<th class="py-space-md px-space-md">Pengguna &amp; Identitas</th>
+<th class="py-space-md px-space-md">Peran &amp; Penugasan</th>
+<th class="py-space-md px-space-md">Aktivitas Terakhir</th>
+<th class="py-space-md px-space-md">Status Akun</th>
+<th class="py-space-md px-space-md text-right">Tindakan Admin</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Row 1: Guru Kimia (Nurul Hidayah) -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  NH
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Dra. Hj. Nurul Hidayah, M.Pd</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 197805122003122002</span>
+<span class="font-label-sm text-label-sm text-primary truncate">nurul.hidayah@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Guru Pengajar
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kimia Dasar &amp; Praktikum</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">10 menit lalu</span>
+<span class="font-body-sm text-body-sm text-secondary">Presensi QR R.302 (IP 182.1.20.44)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openResetPasswordModal('Dra. Hj. Nurul Hidayah, M.Pd', 'nurul.hidayah@sman1.sch.id', '197805122003122002')" title="Protokol Reset Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditRoleDrawer('Dra. Hj. Nurul Hidayah, M.Pd', 'Guru Pengajar', 'Kimia')" title="Ubah Hak Akses &amp; Peran" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Admin Kurikulum (Rahmat Hidayat) - CURRENT USER -->
+<tr class="hover:bg-surface transition-colors bg-surface/50">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  RH
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">H. Rahmat Hidayat, M.Pd</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] font-bold">SESI ANDA</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 198109152006041008</span>
+<span class="font-label-sm text-label-sm text-primary truncate">rahmat.kurikulum@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Admin Kurikulum
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Manajemen Rombel &amp; Modul</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Sedang Aktif
+                </span>
+<span class="font-body-sm text-body-sm text-secondary">SIPAGU Web Desk (192.168.1.15)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Aktif (2FA On)
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Reset Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Pengaturan Akun" type="button">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Kepala Sekolah (Mulyadi) -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  DM
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Drs. H. Mulyadi, M.Pd</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 196805121994031004</span>
+<span class="font-label-sm text-label-sm text-primary truncate">mulyadi.kepsek@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-tertiary">workspace_premium</span>
+                  Kepala Sekolah
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Otoritas Validasi Laporan</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Kemarin, 16.30 WIB</span>
+<span class="font-body-sm text-body-sm text-secondary">Verifikasi Presensi Mingguan</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openResetPasswordModal('Drs. H. Mulyadi, M.Pd', 'mulyadi.kepsek@sman1.sch.id', '196805121994031004')" title="Protokol Reset Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditRoleDrawer('Drs. H. Mulyadi, M.Pd', 'Kepala Sekolah', 'Pimpinan Institusi')" title="Ubah Hak Akses &amp; Peran" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Guru Informatika (Ahmad Riyadi) -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  AR
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Ahmad Riyadi, M.Kom</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 198509142010011012</span>
+<span class="font-label-sm text-label-sm text-primary truncate">ahmad.riyadi@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Guru Pengajar
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Informatika &amp; TIK Kelas X-XII</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Hari ini, 07.15 WIB</span>
+<span class="font-body-sm text-body-sm text-secondary">Scan QR Lab Komputer 2</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openResetPasswordModal('Ahmad Riyadi, M.Kom', 'ahmad.riyadi@sman1.sch.id', '198509142010011012')" title="Protokol Reset Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditRoleDrawer('Ahmad Riyadi, M.Kom', 'Guru Pengajar', 'Informatika')" title="Ubah Hak Akses &amp; Peran" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Guru Nonaktif / Cuti (Budi Santoso) -->
+<tr class="hover:bg-surface transition-colors bg-surface-container-low/40">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm opacity-80">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  BS
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Budi Santoso, S.Pd</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 197905182005011008</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">budi.santoso@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">
+                  Guru Pengajar
+                </span>
+<span class="font-body-sm text-body-sm text-secondary">Matematika Wajib (Ditangguhkan)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">12 Okt 2024</span>
+<span class="font-body-sm text-body-sm text-secondary">SK Cuti Studi Tugas Belajar</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                Ditangguhkan
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" title="Aktifkan Kembali Akun" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+                  Aktifkan
+                </button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Guru Fisika (Siti Rahmawati) -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+                  SR
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Siti Rahmawati, S.Pd</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">NIP. 199102282016022003</span>
+<span class="font-label-sm text-label-sm text-primary truncate">siti.rahmawati@sman1.sch.id</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Guru Pengajar
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fisika Kelas XI MIPA</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Hari ini, 09.20 WIB</span>
+<span class="font-body-sm text-body-sm text-secondary">Log Mengajar Sesi II</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Aktif
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openResetPasswordModal('Siti Rahmawati, S.Pd', 'siti.rahmawati@sman1.sch.id', '199102282016022003')" title="Protokol Reset Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors" onclick="openEditRoleDrawer('Siti Rahmawati, S.Pd', 'Guru Pengajar', 'Fisika')" title="Ubah Hak Akses &amp; Peran" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span>Tampilkan</span>
+<select class="bg-surface-container-lowest rounded px-2 py-1 font-label-md text-label-md text-on-surface focus:outline-none">
+<option>10 data per halaman</option>
+<option>25 data per halaman</option>
+<option>50 data per halaman</option>
+</select>
+<span>dari 62 total pengguna</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface" type="button">
+          Sebelumnya
+        </button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm" type="button">
+          1
+        </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface shadow-sm" type="button">
+          2
+        </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface shadow-sm" type="button">
+          3
+        </button>
+<span class="px-1 text-secondary">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface shadow-sm" type="button">
+          7
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface" type="button">
+          Berikutnya
+        </button>
+</div>
+</div>
+</div>
+<!-- Security Compliance & Technical Audit Info Banner -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px] text-primary flex-shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Kepatuhan Standar Keamanan Data Pendidikan</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+          Seluruh kredensial akun dilindungi hashing algoritma SHA-256 / Bcrypt dengan salting unik. Sesuai regulasi BSSN dan Permendikbudristek No. 48/2023, Admin tidak memiliki akses melihat kata sandi pengguna dalam bentuk teks biasa (plain text).
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">security</span>
+        Lockout 5x Gagal
+      </span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">vpn_key</span>
+        SSL TLS 1.3
+      </span>
+</div>
+</div>
+<!-- MODAL: Password Reset Workflow -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm hidden" id="modal-reset-password">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">lock_reset</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Protokol Reset Kata Sandi</h3>
+<span class="font-body-sm text-body-sm text-secondary">Otentikasi Kredensial Pendidik Terverifikasi</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeModal('modal-reset-password')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Target User Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-md">
+<span id="reset-user-initial">NH</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate" id="reset-user-name">Dra. Hj. Nurul Hidayah, M.Pd</span>
+<span class="font-body-sm text-body-sm text-secondary truncate" id="reset-user-email">nurul.hidayah@sman1.sch.id</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Pilih Metode Reset Sandi</label>
+<!-- Method 1: Email Magic Link -->
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary accent-primary" name="reset-method" type="radio" value="email"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Kirim Tautan Rahasia ke Email Resmi</span>
+<span class="font-body-sm text-body-sm text-secondary">
+                Tautan token acak sekali pakai yang berlaku selama 24 jam. Pengguna mengatur kata sandi secara mandiri.
+              </span>
+</div>
+</label>
+<!-- Method 2: Temporary Password -->
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 text-primary accent-primary" name="reset-method" type="radio" value="temp"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Terbitkan Sandi Sementara Acak</span>
+<span class="font-body-sm text-body-sm text-secondary">
+                Sistem menghasilkan string sandi acak (12 karakter). Pengguna diwajibkan mengganti kata sandi pada login pertama.
+              </span>
+</div>
+</label>
+</div>
+<!-- Security Notice -->
+<div class="p-space-sm rounded-lg bg-secondary-container/60 text-on-secondary-fixed flex items-start gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">verified_user</span>
+<span>Sesuai standar zero-trust, sesi aktif pengguna di perangkat lain akan diputus otomatis setelah reset berhasil.</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="closeModal('modal-reset-password')" type="button">
+          Batal
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5 shadow-sm" onclick="executePasswordReset()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Proses Reset Sekarang
+        </button>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER: Edit Role & Access Level -->
+<div class="fixed inset-0 z-50 overflow-hidden hidden" id="drawer-edit-role">
+<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm transition-opacity" onclick="closeDrawer('drawer-edit-role')"></div>
+<div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+<div class="w-screen max-w-md bg-surface-container-lowest shadow-2xl flex flex-col">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Ubah Peran &amp; Hak Akses</h3>
+<span class="font-body-sm text-body-sm text-secondary">Modifikasi Wewenang Sistem SIPAGU</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeDrawer('drawer-edit-role')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Body -->
+<div class="p-space-lg space-y-space-md flex-1 overflow-y-auto">
+<!-- User Summary Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Subjek Pengguna</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="drawer-user-name">Dra. Hj. Nurul Hidayah, M.Pd</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold" id="drawer-user-role-current">Peran Sekarang: Guru Pengajar</span>
+</div>
+<!-- Role Selector -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Tingkatan Hak Akses (Role)</label>
+<div class="space-y-2">
+<!-- Role Option: Guru -->
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary accent-primary" name="system-role" type="radio" value="guru"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Guru Pengajar</span>
+<span class="font-body-sm text-body-sm text-secondary">
+                    Hak akses memindai QR kelas, membuat jurnal mengajar harian, serta melihat riwayat kehadiran pribadi.
+                  </span>
+</div>
+</label>
+<!-- Role Option: Admin Kurikulum -->
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 text-primary accent-primary" name="system-role" type="radio" value="kurikulum"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Admin Kurikulum</span>
+<span class="font-body-sm text-body-sm text-secondary">
+                    Dapat mengelola jadwal mengajar, audit log presensi harian seluruh guru, dan mengatur pembagian rombel.
+                  </span>
+</div>
+</label>
+<!-- Role Option: Kepala Sekolah -->
+<label class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="mt-1 w-4 h-4 text-primary accent-primary" name="system-role" type="radio" value="kepsek"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Kepala Sekolah / Pengawas</span>
+<span class="font-body-sm text-body-sm text-secondary">
+                    Akses eksekutif persetujuan izin/cuti, rekap laporan kinerja guru bulanan, dan ekspor data resmi ke dinas.
+                  </span>
+</div>
+</label>
+</div>
+</div>
+<!-- Elevated Permission Warning -->
+<div class="p-space-sm rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-tertiary flex-shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="font-semibold">Peringatan Peningkatan Wewenang (Role Elevation)</span>
+<span>
+                Mengubah peran menjadi Admin Kurikulum atau Kepala Sekolah membuka akses terhadap data sensitif sekolah dan log aktivitas seluruh pendidik.
+              </span>
+</div>
+</div>
+<!-- Admin Authorization Password Check -->
+<div class="space-y-space-xs pt-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">
+              Konfirmasi Kata Sandi Anda (Otorisasi Admin)
+            </label>
+<input class="w-full bg-surface-container-low rounded-lg px-space-md py-2.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20" placeholder="Ketik kata sandi Anda untuk konfirmasi..." type="password"/>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">
+              Dibutuhkan untuk mencegah perubahan peran tanpa izin.
+            </span>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="closeDrawer('drawer-edit-role')" type="button">
+            Batalkan
+          </button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5 shadow-sm" onclick="saveRoleChanges()" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+            Simpan Perubahan
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Audit Trail Log Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm hidden" id="modal-audit-log">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">security_update_good</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Log Audit Keamanan Akun</h3>
+<span class="font-body-sm text-body-sm text-secondary">Rekaman Aktivitas Autentikasi 7 Hari Terakhir</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeModal('modal-audit-log')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg max-h-96 overflow-y-auto divide-y divide-surface-container-low">
+<!-- Log Item 1 -->
+<div class="py-3 flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">login</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Login Berhasil via 2FA</span>
+<span class="font-body-sm text-body-sm text-secondary">H. Rahmat Hidayat (Admin Kurikulum) • IP: 192.168.1.15</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex-shrink-0">15 mnt lalu</span>
+</div>
+<!-- Log Item 2 -->
+<div class="py-3 flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">sync_saved_locally</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sinkronisasi Data Dapodik</span>
+<span class="font-body-sm text-body-sm text-secondary">Engine v2.4 berhasil memvalidasi 48 NUPTK aktif</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex-shrink-0">2 jam lalu</span>
+</div>
+<!-- Log Item 3 -->
+<div class="py-3 flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">key_off</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Reset Kredensial Pengguna</span>
+<span class="font-body-sm text-body-sm text-secondary">Permintaan tautan sandi oleh Ahmad Riyadi, M.Kom</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex-shrink-0">Kemarin, 14.10</span>
+</div>
+<!-- Log Item 4 -->
+<div class="py-3 flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-error mt-0.5">block</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Proteksi Brute-Force Dipicu</span>
+<span class="font-body-sm text-body-sm text-secondary">Percobaan sandi salah 5x dari IP 103.22.41.9 • Akun ditangguhkan 15 mnt</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex-shrink-0">3 hari lalu</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Tersimpan dalam enkripsi immutable ledger</span>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="closeModal('modal-audit-log')" type="button">
+          Tutup Riwayat
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openResetPasswordModal(userName, userEmail, userNip) {
+    document.getElementById('reset-user-name').textContent = userName;
+    document.getElementById('reset-user-email').textContent = userEmail + ' • NIP. ' + userNip;
+    const initials = userName.split(' ').filter(n => !n.includes('.')).map(n => n[0]).slice(0, 2).join('');
+    document.getElementById('reset-user-initial').textContent = initials || 'PG';
+    document.getElementById('modal-reset-password').classList.remove('hidden');
+  }
+
+  function openEditRoleDrawer(userName, currentRole, mapel) {
+    document.getElementById('drawer-user-name').textContent = userName;
+    document.getElementById('drawer-user-role-current').textContent = 'Peran Sekarang: ' + currentRole + ' (' + mapel + ')';
+    document.getElementById('drawer-edit-role').classList.remove('hidden');
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+  }
+
+  function toggleModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal.classList.contains('hidden')) {
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function closeDrawer(drawerId) {
+    document.getElementById(drawerId).classList.add('hidden');
+  }
+
+  function executePasswordReset() {
+    alert('Permintaan reset sandi terkirim! Tautan token aman telah dialirkan ke email instansi pengguna.');
+    closeModal('modal-reset-password');
+  }
+
+  function saveRoleChanges() {
+    alert('Peran dan hak akses pengguna berhasil dimutakhirkan. Sesi pengguna telah disinkronkan ulang.');
+    closeDrawer('drawer-edit-role');
+  }
+
+  function openNewUserModal() {
+    alert('Membuka formulir registrasi pengguna baru SIPAGU terintegrasi Dapodik.');
+  }
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-md mt-auto"><div class="w-full px-gutter-desktop flex flex-col sm:flex-row items-center justify-between gap-space-sm text-secondary font-label-md text-label-md"><div class="flex items-center gap-2"><span>© 2024 Kemendikbudristek RI. Hak Cipta Dilindungi.</span></div><div class="flex items-center gap-4 font-body-sm text-body-sm"><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">cloud_sync</span>Offline-First Engine v2.4</span><span class="hidden md:inline">•</span><span class="hidden md:inline">Terverifikasi SIPAGU Core</span></div></div></footer></div></body></html>
